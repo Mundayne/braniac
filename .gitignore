@@ -1,7 +1,7 @@
 # dev stuff
 node_modules/
-cmd/**
-!cmd/example/**
+cmd/mod/**
+cmd/util/**
 util/
 /test.js
 config.js
