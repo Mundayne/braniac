@@ -1,0 +1,33 @@
+{
+  "name": "braniac",
+  "version": "1.0.0",
+  "description": "A simple Discord bot framework built on Discord.js.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mundayne/braniac.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "js",
+    "javascript",
+    "discord.js",
+    "framework"
+  ],
+  "author": "Mundane",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mundayne/braniac/issues"
+  },
+  "homepage": "https://github.com/Mundayne/braniac#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "randomcolor": "^0.5.3",
+    "require-all": "^2.2.0",
+    "require-reload": "^0.2.2"
+  }
+}

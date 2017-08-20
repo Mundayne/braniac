@@ -1,0 +1,10 @@
+# dev stuff
+node_modules/
+cmd/**
+util/
+test.js
+config.js
+*.bat
+
+# example commands
+!cmd/example/**
