@@ -1,10 +1,8 @@
 # dev stuff
 node_modules/
 cmd/**
+!cmd/example/**
 util/
-test.js
+/test.js
 config.js
 *.bat
-
-# example commands
-!cmd/example/**
