@@ -15,7 +15,7 @@ class BraniacClient extends Discord.Client {
    * @param  {Object} config The config file to use with the bot.
    * @param  {Object} [options={}] Optional options for the discord client
    */
-  constructor (config, options = {}) {
+  constructor (config, selfbot, options = {}) {
     super(options)
     /**
      * The bot's config file.
@@ -46,6 +46,7 @@ class BraniacClient extends Discord.Client {
       if (msg.author !== this.user && msg.guild) Filter(this, msg)
 
       if (msg.author.bot) return
+      if (selfbot && msg.author === bot.user) return
 
       let guild = msg.guild
       let gConfig = guild ? this.config : this.config[guild.id]
