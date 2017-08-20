@@ -13,6 +13,9 @@ class BraniacCommand {
    * @param  {Object} info Information about the command.
    */
   constructor (client, info) {
+    if (!client || !info.name || !info.group || !info.description) {
+      throw new Error('Invalid command properties.')
+    }
     /**
      * The bot.
      * @type {Braniac.Client}
@@ -37,7 +40,7 @@ class BraniacCommand {
      * The group the command belongs to.
      * @type {String}
      */
-    this.group = info.group || 'general'
+    this.group = info.group
     /**
      * A general description of the command.
      * @type {String}
