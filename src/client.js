@@ -46,7 +46,7 @@ class BraniacClient extends Discord.Client {
       if (msg.author !== this.user && msg.guild) Filter(this, msg)
 
       if (msg.author.bot) return
-      if (selfbot && msg.author === this.user) return
+      if (selfbot && msg.author !== this.user) return
 
       let guild = msg.guild
       let gConfig = guild ? this.config : this.config[guild.id]
