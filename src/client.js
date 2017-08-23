@@ -15,13 +15,18 @@ class BraniacClient extends Discord.Client {
    * @param  {Object} config The config file to use with the bot.
    * @param  {Object} [options={}] Optional options for the discord client
    */
-  constructor (config, options = {}) {
+  constructor (config, selfbot, options = {}) {
     super(options)
     /**
      * The bot's config file.
      * @type {Object}
      */
     this.config = config
+    /**
+     * Is this bot a selfbot?
+     * @type {boolean}
+     */
+    this.selfboy = selfbot
     /**
      * The logger of the client.
      * @type {Logger}
@@ -43,12 +48,13 @@ class BraniacClient extends Discord.Client {
     })
 
     this.on('message', msg => {
-      if (msg.author !== this.user && msg.guild) Filter(this, msg)
+      if (!this.selfbot && msg.author !== this.user && msg.guild) Filter(this, msg)
 
       if (msg.author.bot) return
+      if (this.selfbot && msg.author !== this.user) return
 
       let guild = msg.guild
-      let gConfig = guild ? this.config : this.config[guild.id]
+      let gConfig = guild && this.config[guild.id] ? this.config[guild.id] : this.config
       let prefix = gConfig.prefix
 
       if (!msg.content.startsWith(prefix)) return
