@@ -26,7 +26,7 @@ class BraniacClient extends Discord.Client {
      * Is this bot a selfbot?
      * @type {boolean}
      */
-    this.selfboy = selfbot
+    this.selfbot = selfbot
     /**
      * The logger of the client.
      * @type {Logger}
@@ -90,7 +90,7 @@ class BraniacClient extends Discord.Client {
     if (command) {
       // Check permission level
       if (!this.selfbot && !this.memberPerms(msg.member).includes(command.perms)) {
-        return msg.reply(`you have insufficient permissions to do this.`)
+        return msg.reply('you have insufficient permissions to do this.')
           .catch(console.error)
       }
 
