@@ -89,7 +89,7 @@ class BraniacClient extends Discord.Client {
     // If the command exists
     if (command) {
       // Check permission level
-      if (!this.memberPerms(msg.member).includes(command.perms)) {
+      if (!this.selfbot && !this.memberPerms(msg.member).includes(command.perms)) {
         return msg.reply(`you have insufficient permissions to do this.`)
           .catch(console.error)
       }
